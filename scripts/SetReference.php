@@ -1,5 +1,5 @@
 <?php 
-function setReference ($text, $wikins) {
+function SetReference ($text, $wikins) {
     if (!notMainNS()) return $text;
     
     //Các bản mẫu định hướng, redirect
