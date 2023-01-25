@@ -37,16 +37,13 @@ function TranslateDateTime($text)
                 try
                 {
                     $dt = strtotime($mdatetimeMatch[0]);
-                    $dateOutput = getDate($dt); 
-                    // $dt = Convert.ToDateTime(mdatetime.Value);
+                    $dateOutput = getDate($dt);
                     $a = strlen($dateOutput["mon"]) == 1 ? "0".$dateOutput["mon"] : $dateOutput["mon"];
                     $b = strlen($dateOutput["mday"]) == 1 ? "0".$dateOutput["mday"] : $dateOutput["mday"];
                     $c = $dateOutput["year"];
                     $result = "ngày ".$b." tháng ".$a." năm ".$c;
                     $convertDate = str_replace($mdatetimeMatch[0], $result, $convertDate);
-                    // convertDate.Replace(mdatetime.Value, result);
                     $text = str_replace($convertDatetemp, $convertDate, $text);
-                    // ArticleText.Replace(convertDatetemp, convertDate);
                     $convertDatetemp = $convertDate;
                 }
                 catch (Exception $e) {
@@ -145,8 +142,7 @@ function TranslateDateTime($text)
         else break;
     }
 
-    // $count = 0;
-    //Fix lỗi ngày tháng "Kiểm tra giá trị ngày tháng"
+    // Fix lỗi ngày tháng "Kiểm tra giá trị ngày tháng"
     while (true)
     {
         if ($count >= 100) break;
@@ -168,10 +164,7 @@ function TranslateDateTime($text)
             {
                 try
                 {
-                    //int i = mdatetime.Value.IndexOf('=');
-                    //int j = mdatetime.Value.IndexOf('|');
                     $temp = trim(substr($mdatetimeMatch[0], strpos($mdatetimeMatch[0], "=") + 1));
-                    // mdatetime.Value.Substring(mdatetime.Value.IndexOf('=') + 1).Trim();
                     if (Str_contains($mdatetimeMatch[0], "|")) {
                         $temp = trim(substr($temp, 0, strpos($temp, "|")));
                     }
@@ -247,7 +240,6 @@ function TranslateDateTime($text)
                     }
 
                     $s = explode("-", $temp);
-                    // string[] s = temp.Split('-');
                     $dt = strtotime($s[2]."-".$s[1]."-".$s[0]);
                     $dateOutput = getDate($dt);
                     
@@ -307,9 +299,6 @@ function TranslateDateTime($text)
             {
                 try
                 {
-
-                    //dt = Convert.ToDateTime(char.ToUpper(mdatetime.Value[0]) + mdatetime.Value.Substring(1));
-
                     $b = substr($mdatetimeMatch[0], 0, 1)."".substr($mdatetimeMatch[0], strpos($mdatetimeMatch[0], "ngày ") + 5, 1);
 
                     $result = "ngày ".$b." tháng";
