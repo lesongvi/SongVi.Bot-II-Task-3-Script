@@ -1,3 +1,4 @@
+<?php
 function PunctuationFixes($text, $title) {
     #region Punctuation
     $convertPunctuation = $text;
@@ -9,7 +10,6 @@ function PunctuationFixes($text, $title) {
     if (!Str_contains($text, "Tên miền") && $domainname == 0)
     {
         $count = 0;
-        // $text = $text + "_________";
         while (true)
         {
             if ($count >= 100) break;
@@ -94,7 +94,7 @@ function PunctuationFixes($text, $title) {
         }
 
         $count = 0;
-        //Trường hợp ( [[abc]]) => ([[abc]])
+        // Trường hợp ( [[abc]]) => ([[abc]])
         while (true)
         {
             if ($count >= 100) break;

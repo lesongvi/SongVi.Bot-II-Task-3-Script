@@ -1,3 +1,4 @@
+<?php
 function TranslateDateTime($text)
 {
     if (Str_contains($text, "xếp hạng đĩa đơn") || Str_contains($text, "Xếp hạng đĩa đơn") || Str_contains($text, "Singlechart") || Str_contains($text, "singlechart")) return $text;
