@@ -3,8 +3,8 @@ function PunctuationFixes($text, $title) {
     $convertPunctuation = $text;
     $convertPunctuationTemp = $text;
 
-    //Exclude internet domain articles
-    $domainname = preg_match("/\.\w{2}/", $text, $domainnameMatch);
+    // Exclude internet domain articles
+    $domainname = preg_match("/\.\w{2}/", $title, $domainnameMatch);
 
     if (!Str_contains($text, "Tên miền") && $domainname == 0)
     {
