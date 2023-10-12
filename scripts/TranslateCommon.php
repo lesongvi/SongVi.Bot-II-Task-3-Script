@@ -18,7 +18,7 @@ function TranslateCommon ($text) {
     $text = preg_replace("/\{\{[Cc]ommons category-inline/i", "{{Thể loại Commons nội dòng", $text);
     $text = preg_replace("/\{\{[Ee]ikispecies-inline/i", "{{Wikispecies nội dòng", $text);
     $text = preg_replace("/\{\{[Cc]ommons category/i", "{{Thể loại Commons", $text);
-    $text = preg_replace("/\{\{[Cc]ommons\s*cat/i", "{{Thể loại Commons", $text);
+    // $text = preg_replace("/\{\{[Cc]ommons\s*cat/i", "{{Thể loại Commons", $text);
     
     $text = preg_replace("/==\s*[Ee]xternal\s*links\s*==/i", "== Liên kết ngoài ==", $text);
     $text = preg_replace("/==\s*[Rr]eferences\s*==/i", "== Tham khảo ==", $text);
